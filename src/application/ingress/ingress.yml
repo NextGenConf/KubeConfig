@@ -2,3 +2,11 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ngc-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: echo-service
+          servicePort: 80
