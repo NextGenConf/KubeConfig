@@ -27,6 +27,6 @@ spec:
       - name: echo
         image: hashicorp/http-echo
         args:
-        - "-text=echoHello"
+        - "-text=helloNGC"
         ports:
         - containerPort: 5678
