@@ -2,11 +2,19 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ngc-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx    
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  tls:
+    - hosts:
+      - ngc.northeurope.cloudapp.azure.com
+      secretName: tls-secret
   rules:
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: echo-service
-          servicePort: 80
+  - host: ngc.northeurope.cloudapp.azure.com
+    http:
+        paths:
+        - path: /
+          backend:
+            serviceName: echo-service
+            servicePort: 80
