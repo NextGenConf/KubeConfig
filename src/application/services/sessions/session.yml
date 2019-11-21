@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
       - name: sessions
-        image: nextgenconf.azurecr.io/nextgenconf/conferenceservice:78074372dbcb66eb8eebc89caac63fec2c6d4b63
+        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:be8bd09196cf507950160cf1539de9b0e52a96a4
         ports:
         - containerPort: 80
