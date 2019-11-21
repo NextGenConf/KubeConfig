@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: session-service
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: sessions
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sessions-deployment
+spec:
+  selector:
+    matchLabels:
+      app: sessions
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sessions
+    spec:
+      containers:
+      - name: sessions
+        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:2060473a5275d6165536f61b7caca01e171eb4df
+        env:
+        - name: MONGO_DB_USER
+          valueFrom:
+              secretKeyRef:
+                name: mongodb-credentials
+                key: username
+        - name: MONGO_DB_PASSWORD
+          valueFrom:
+              secretKeyRef:
+                name: mongodb-credentials
+                key: password
+        - name: MONGO_DB_PORT
+          value: '10255'
+        - name: MONGO_DB_PARAMETERS
+          value: ssl=true&replicaSet=globaldb
+
+        ports:
+        - containerPort: 5000
