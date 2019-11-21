@@ -5,11 +5,7 @@ metadata:
 spec:
   ports:
   - port: 80
-<<<<<<< HEAD
-    targetPort: 80
-=======
     targetPort: 5000
->>>>>>> master
   selector:
     app: sessions
 ---
