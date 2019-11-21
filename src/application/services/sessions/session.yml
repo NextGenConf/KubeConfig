@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: sessions
-        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:7a383d4e3cfa5c9a3ab5fb11aed763f589ff1e04
+        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:bc3734b19ccc4dbfc508339924172c9998789f7a
         env:
         - name: MONGO_DB_USER
           valueFrom:
@@ -41,6 +41,8 @@ spec:
           value: '10255'
         - name: MONGO_DB_PARAMETERS
           value: ssl=true&replicaSet=globaldb
+        - name: MONGO_DB_HOST
+          value: nextgenconf.documents.azure.com
 
         ports:
         - containerPort: 5000
