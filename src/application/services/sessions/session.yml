@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -27,18 +28,18 @@ spec:
     spec:
       containers:
       - name: sessions
-        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:67b6cb5f972a383aea74a4d804f96a5d12b899d8
+        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:26751fe0a7f418ca0da1a70092bda270e1af2459
         env:
         - name: MONGO_DB_USER
           valueFrom:
-              secretKeyRef:
-                name: mongodb-credentials
-                key: username
+            secretKeyRef:
+              name: mongodb-credentials
+              key: username
         - name: MONGO_DB_PASSWORD
           valueFrom:
-              secretKeyRef:
-                name: mongodb-credentials
-                key: password
+            secretKeyRef:
+              name: mongodb-credentials
+              key: password
         - name: MONGO_DB_PORT
           value: '10255'
         - name: MONGO_DB_PARAMETERS
