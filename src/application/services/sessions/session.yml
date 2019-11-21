@@ -5,7 +5,11 @@ metadata:
 spec:
   ports:
   - port: 80
+<<<<<<< HEAD
+    targetPort: 80
+=======
     targetPort: 5000
+>>>>>>> master
   selector:
     app: sessions
 ---
@@ -25,7 +29,7 @@ spec:
     spec:
       containers:
       - name: sessions
-        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:d2497780c01cff5a1fc724a501b423c5427e195b
+        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:67b6cb5f972a383aea74a4d804f96a5d12b899d8
         env:
         - name: MONGO_DB_USER
           valueFrom:
