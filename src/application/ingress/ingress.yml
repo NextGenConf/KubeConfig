@@ -19,6 +19,10 @@ spec:
           backend:
             serviceName: session-service
             servicePort: 80
+        - path: /api/conference
+          backend:
+            serviceName: conference-service
+            servicePort: 80
         - path: /echo/
           backend:
             serviceName: echo-service
