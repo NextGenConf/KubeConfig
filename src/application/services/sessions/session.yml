@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 5000
   selector:
     app: sessions
 ---
@@ -43,4 +43,4 @@ spec:
           value: ssl=true&replicaSet=globaldb
 
         ports:
-        - containerPort: 80
+        - containerPort: 5000
