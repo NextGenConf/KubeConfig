@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: conferences
-        image: nextgenconf.azurecr.io/nextgenconf/conferenceservice:5fb4bd009016e3ef20485d5f675e74dc60b7a992
+        image: nextgenconf.azurecr.io/nextgenconf/conferenceservice:3a773443cd1171045e1e6703c8c014e3a72ccb3c
         env:
         - name: MONGO_DB_USER
           valueFrom:
