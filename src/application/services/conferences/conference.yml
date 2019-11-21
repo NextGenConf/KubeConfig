@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 80
   selector:
     app: conferences
 ---
@@ -48,4 +48,4 @@ spec:
           value: nextgenconf.documents.azure.com
 
         ports:
-        - containerPort: 5000
+        - containerPort: 80
