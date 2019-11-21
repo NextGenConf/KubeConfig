@@ -5,7 +5,11 @@ metadata:
 spec:
   ports:
   - port: 80
+<<<<<<< HEAD
     targetPort: 80
+=======
+    targetPort: 5000
+>>>>>>> master
   selector:
     app: sessions
 ---
@@ -41,6 +45,8 @@ spec:
           value: '10255'
         - name: MONGO_DB_PARAMETERS
           value: ssl=true&replicaSet=globaldb
+        - name: MONGO_DB_HOST
+          value: nextgenconf.documents.azure.com
 
         ports:
-        - containerPort: 80
+        - containerPort: 5000
