@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: sessions
-        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:26751fe0a7f418ca0da1a70092bda270e1af2459
+        image: nextgenconf.azurecr.io/nextgenconf/sessionservice:d6ffb4aaf203e0616f0d55be405f08c67c8ccaf8
         env:
         - name: MONGO_DB_USER
           valueFrom:
