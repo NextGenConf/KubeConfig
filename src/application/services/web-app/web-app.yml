@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: web-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  selector:
+    matchLabels:
+      app: web-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: nextgenconf.azurecr.io/nextgenconf/webapp:052b8eef5583882c221c3b4721df0996e853c0c2
+        ports:
+        - containerPort: 80
