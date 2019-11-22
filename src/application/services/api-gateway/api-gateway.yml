@@ -8,26 +8,26 @@ spec:
   - port: 80
     targetPort: 4000
   selector:
-    app: sessions
+    app: api-gateway
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sessions-deployment
+  name: api-gateway-deployment
   annotations:
     fluxcd.io/automated: "true"
 spec:
   selector:
     matchLabels:
-      app: sessions
+      app: api-gateway
   replicas: 1
   template:
     metadata:
       labels:
-        app: sessions
+        app: api-gateway
     spec:
       containers:
-      - name: sessions
+      - name: api-gateway
         image: nextgenconf.azurecr.io/nextgenconf/apigateway:c5c6ea162a3f829d7cbcd8ff8c45714c7873d260
         env:
         - name: CONFERENCES_BASE_URL
