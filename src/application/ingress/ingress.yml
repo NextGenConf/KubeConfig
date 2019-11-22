@@ -32,7 +32,7 @@ spec:
           backend:
             serviceName: echo-service
             servicePort: 80
-        - path: (/|$)(.*)
+        - path: /app(/|$)(.*)
           backend:
             serviceName: web-app
             servicePort: 80
