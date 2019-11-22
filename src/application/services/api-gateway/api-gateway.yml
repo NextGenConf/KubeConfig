@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: nextgenconf.azurecr.io/nextgenconf/apigateway:9062dccb49c96ddfa9f51250cf4a4534c2ef85c1
+        image: nextgenconf.azurecr.io/nextgenconf/apigateway:882a677f0d864620f6c24b3976ded1908ebb967f
         env:
         - name: CONFERENCES_BASE_URL
           value: 'http://conference-service'
