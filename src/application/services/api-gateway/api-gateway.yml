@@ -31,10 +31,10 @@ spec:
         image: nextgenconf.azurecr.io/nextgenconf/apigateway:c5c6ea162a3f829d7cbcd8ff8c45714c7873d260
         env:
         - name: CONFERENCES_BASE_URL
-          value: 'http://conference-service:80'
+          value: 'http://conference-service'
         env:
         - name: SESSIONS_BASE_URL
-          value: 'http://session-service:80'
+          value: 'http://session-service'
 
         ports:
         - containerPort: 4000
