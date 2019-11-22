@@ -32,7 +32,6 @@ spec:
         env:
         - name: CONFERENCES_BASE_URL
           value: 'http://conference-service'
-        env:
         - name: SESSIONS_BASE_URL
           value: 'http://session-service'
 
