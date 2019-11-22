@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: nextgenconf.azurecr.io/nextgenconf/webapp:4b4e260be9e55c80f7b83e3b3bde37a1f421d49b
+        image: nextgenconf.azurecr.io/nextgenconf/webapp:e156d6a2ce2984515d91c6973efabd9073d7387e
         ports:
         - containerPort: 80
